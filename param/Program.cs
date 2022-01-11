@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace lab7
+namespace param
 {
     internal class Program
     {
@@ -16,9 +16,11 @@ namespace lab7
             calcSum(a, b, c);
             Console.ReadKey();
         }
-        static void calcSum(int a, int b, int c)
+        static void calcSum(params int[] numbers)
         {
-            int S = a + b + c;
+            int S = 0;
+            foreach (int n in numbers)
+                S += n;
             Console.WriteLine(S);
         }
     }
